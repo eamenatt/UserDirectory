@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import DataTable from "./DataTable";
 import API from "../utils/API";
 import DataContext from "../utils/DataContext";
 import "./styles.css";
 import SearchBar from "./Searchbar";
+import TableHeader from "./TableHeader";
 
+//Constructing table and declaring headers
 const TableContents = () => {
   const [developerState, setDeveloperState] = useState({
     users: [],
@@ -13,9 +14,9 @@ const TableContents = () => {
     headings: [
       { name: "Employee Photo", width: "15%", order: "descend" },
       { name: "Full Name", width: "10%", order: "descend" },
-      { name: "Phone #", width: "20%", order: "descend" },
+      { name: "Phone Number", width: "20%", order: "descend" },
       { name: "Email Address", width: "20%", order: "descend" },
-      { name: "Date of Birth", width: "10%", order: "descend" }
+      { name: "Birthday", width: "10%", order: "descend" }
     ]
   });
 
@@ -41,15 +42,15 @@ const TableContents = () => {
         filteredUsers: results.data.results
       });
     });
-    // eslint-disable-next-line
-  }, []);
+    
+  });
 
   return (
     <DataContext.Provider
       value={{ developerState, handleSearchChange }}
     ><SearchBar/>
       <div className="data-area">
-        {developerState.filteredUsers.length > 0 ? <DataTable /> : <div></div>}
+        {developerState.filteredUsers.length > 0 ? <TableHeader /> : <div></div>}
       </div>
     </DataContext.Provider>
   );

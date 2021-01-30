@@ -3,7 +3,7 @@ import DataBody from "./DataBody";
 import DataContext from "../utils/DataContext";
 import "./styles.css";
 
-const DataTable = () => {
+const TableHeader = () => {
   const context = useContext(DataContext);
 
   return (
@@ -20,12 +20,8 @@ const DataTable = () => {
                 <th
                   className="col"
                   key={name}
-                  style={{ width }}
-                  onClick={() => {
-                    context.handleSort(name);
-                  }}>
+                  style={{ width }}>
                   {name}
-                  <span className="pointer"></span>
                 </th>
               );
             })}
@@ -37,4 +33,4 @@ const DataTable = () => {
   );
 }
 
-export default DataTable;
+export default TableHeader;

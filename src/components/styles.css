@@ -1,16 +1,11 @@
-/* * {
-    padding: 0;
-    margin: 0;
-  } */
-  
 .App {
     text-align: center;
-    font-family: 'Reem Kufi', sans-serif;
+    font-family:Georgia, Times, 'Times New Roman', serif, sans-serif;
   }
 
 .data-area {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
   }
 
 .name-cell {
@@ -19,7 +14,8 @@
 
 .datatable .col {
     cursor: pointer;
-    background-color: #fcc846;
+    background-color: #1b7704;
+    color: white;
   }
   
 .datatable .col .pointer:after {
@@ -28,11 +24,6 @@
     margin-right: 18px;
   }
   
-  .datatable .col .pointer:hover:after {
-    font-size: 80%;
-    content: "🔻";
-    margin-right: 0;
-  }
 
   .header {
     padding: 40px;
@@ -55,8 +46,8 @@ body {
 .navbar {
     padding: 20px 25px;
     margin: 0 auto;
-    width: 90%;
-    background-color: #73ba9b;
+    width: 100%;
+    background-color: #808080;
   }
   
 .navbar-collapse {
@@ -72,13 +63,15 @@ body {
     align-items: flex-start;
   }
 
-.searchbox button {
-    border: 1px solid #a1c181;
+.searchbox {
+  position:absolute;
+  left: 10px;
+  bottom:-9px;
+  margin: 10px;
 }
 
-.searchbox button:hover {
-    background-color: #a1c181;
-    color: #ffffff;
-}
+
+
+
   
   
